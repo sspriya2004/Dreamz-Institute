@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Sanchez:ital@0;1&display=swap');
+.sanchez-regular {
+  font-family: "Sanchez", serif;
+  font-weight: 400;
+  font-style: normal;
+} 
+.sanchez-regular-italic {
+  font-family: "Sanchez", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.h2-text{
+  font-weight: 700;
+}
+form{
+  width: 35%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.btn-grad{
+  background-image: linear-gradient(45deg, #56BCDF 0%, #2596be 51%, #56BCDF 100%);
+  transition: 0.5s;
+  background-size: 200%;
+  color: white;
+  box-shadow: 0 0 20px #eee;
+  /* transition: transform 0.3s ease-in-out; */
+}
+.btn-grad:hover{
+  background-position: right center; /* changes the direction of the change here */
+  color: #fff;
+  transform: scale(1.03);
+}
+/* sidenav */
+.wrapper{
+  display: flex;
+  position: relative;
+}
+.sidenav{
+  position: fixed;
+  width: 280px;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  flex-shrink: 0;
+  z-index: 100;
+  background-image: linear-gradient(45deg , #56BCDF 0%, #2596be 51%, #56BCDF 100%);
+  background-size: 250% 250%;
+  animation: gradient 10s ease infinite;
+  overflow: auto;
+  -webkit-box-shadow: -9px -3px 20px 14px rgba(0,0,0,0.26); 
+  box-shadow: -9px -3px 20px 14px rgba(0,0,0,0.26);
+  /* -webkit-box-shadow: 1px 0px 9px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 1px 0px 9px 0px rgba(0,0,0,0.75);
+  box-shadow: 1px 0px 9px 0px rgba(0,0,0,0.75); */
+}
+.main-content{
+  height: 100vh;
+  position: relative;
+  left: 280px;
+  width: calc(100% - 280px); 
+}
+@keyframes gradient {
+0% {
+  background-position: 0% 50%;
+}
+50% {
+  background-position: 100% 50%;
+}
+100% {
+  background-position: 0% 50%;
+}
+}
+
+.nav-container{
+  width: 87%;
+  height: auto;
+  padding: 20px 0px;
+}
+.icon-text{
+  display: flex;
+  padding: 0;
+  height: 33px;
+  margin: 3px 0px;
+}
+.span-text{
+  font-size: 15px;
+}
+.material-symbols-outlined{
+  color: white;
+  cursor: context-menu;
+}
+.menu-text{
+  margin: 3px 0px 0px 4px;
+  font-size: 16px;
+  font-weight: 500;
+  list-style: none;
+  text-decoration: none;
+  cursor: context-menu;
+}
+.menu-link{
+  text-decoration: none;
+  color: white;
+  padding-left: 6px;
+}
+.menu-container{
+  margin-left: 25px;
+  /* border: 1px solid; */
+  border-radius: 4px;
+  transition: 0.3s;
+  padding: 0px 9px;
+}
+.menu-container:hover{
+  background-color: rgba(255, 255, 255, 0.3);
+}
+.i-container{
+  padding: 4px 0px;
+}
+.bx-icon{
+  font-size: 23px;
+  color: white;
+}
+.menu-active{
+  background-color: rgba(255, 255, 255, 0.3);
+}
+.shadow-text{
+  text-shadow: 5px 5px 10px black;
+}
+
+@media (max-width: 768px) {
+  .wrapper{
+      flex-direction: column;
+  }
+  .sidenav{
+      flex-shrink: 1;
+  }
+  .main-content{
+      flex: 1;
+  }
+}
