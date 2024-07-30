@@ -45,7 +45,6 @@ login.addEventListener("click", async(e) => {
         try{
             console.log({username,password});
             var response = await axios.post('http://ameen2210.pythonanywhere.com/login/',{username, password});
-            document.getElementById('login-err-msg').innerHTML = response.data.result;
             var is_active = response.data.user_object.is_active;
             var is_superuser = response.data.user_object.is_superuser;
             var is_staff = response.data.user_object.is_staff;
@@ -61,6 +60,9 @@ login.addEventListener("click", async(e) => {
             else if(is_active && is_staff){
                 window.location.href = "../HTML/AddTuitionFees.html";
             }
+        }
+        else{
+            document.getElementById('login-err-msg').innerHTML = `Incorrect username or password <br> Try Again`;
         }
     }
     
