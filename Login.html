@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Signup</title>
+    <link rel="stylesheet" href="../CSS/CommonStyleSheet.css">
+    <link rel="stylesheet" href="../CSS/Login.css">
+    <!-- Bootstrap link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Boxicons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- username -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <!-- password -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <!-- email -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+<body>
+    <div class="container loginSignup-container">
+        <form class="shadow rounded p-4 vertical-center " id="login-form" method="post">
+            <h2 class="text-dark text-center h2-text">Login</h2>
+            <div class="form-group mt-5">
+                <label for="" class="control-label">Username</label>
+                <input type="text" class="input-field" placeholder="Type your username" id="username" required>
+                <div class="icon-container">
+                    <span class="material-symbols-outlined">
+                        person
+                    </span>
+                </div>
+            </div>
+            <div class="form-group  ">
+                <label for="" class="control-label">Password</label>
+                <input type="password" class="input-field password" placeholder="Type your password" id="password" required>
+                <div class="icon-container">
+                    <span class="material-symbols-outlined password">
+                        password
+                    </span>
+                </div>
+                <div class="icon-container" id="float-right">
+                    <i class='bx bx-hide eye-icon'></i>
+                </div>
+                <p class="text-end forgot-password">
+                    <a href="#" class="text-decoration-none text-muted "><small>Forgot password?</small></a>
+                </p>
+            </div>
+            <p class="text-danger" id="login-err-msg"></p>
+            <button class="login-btn btn-grad" id="login">Login</button>
+            <div class="signup-container">
+                <center><p class="text-secondary">
+                    Or Sign Up Here <br> 
+                    <a href="#" class="text-secondary text-decoration-none text-dark text-link" id="show-signup">SIGN UP</a>
+                </p></center>
+            </div>
+        </form>
+        <!-- login -->
+
+        <!-- signup -->
+        <form class="shadow rounded p-4 vertical-center " id="signup-form" method="post" style="display: none;">
+            <h2 class="text-dark text-center h2-text">Sign Up</h2>
+            <div class="form-group mt-5">
+                <label for="" class="control-label">Username</label>
+                <input type="text" class="input-field" placeholder="Create a username" id="new-username" required>
+                <div class="icon-container">
+                    <span class="material-symbols-outlined">
+                        person
+                    </span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="" class="control-label">Email</label>
+                <input type="email" class="input-field" placeholder="Type your email" id="email" required>
+                <div class="icon-container">
+                    <span class="material-symbols-outlined">
+                        mail
+                    </span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="" class="control-label">Password</label>
+                <input type="password" class="input-field password" placeholder="Create a strong password" id="new-password" required>
+                <div class="icon-container">
+                    <span class="material-symbols-outlined password">
+                        password
+                    </span>
+                </div>
+                <div class="icon-container" id="float-right">
+                    <i class='bx bx-hide eye-icon'></i>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="" class="control-label">Confirm Password</label>
+                <input type="password" class="input-field password" style="margin-top: -20px;" placeholder="Repeat your password" id="repeat-password" required>
+                <div class="icon-container">
+                    <span class="material-symbols-outlined password">
+                        password
+                    </span>
+                </div>
+                <div class="icon-container" id="float-right">
+                    <i class='bx bx-hide eye-icon'></i>
+                </div>
+            </div>
+            <p class="text-danger" id="signup-err-msg"></p>
+            <button class="login-btn btn-grad" id="signup">Sign Up</button>
+            <div class="signup-container">
+                <p class="text-secondary">
+                    Already have an account? <br> 
+                    <a href="#" class="text-secondary text-decoration-none text-dark text-link " id="show-login">LOGIN</a>
+                </p>
+            </div>
+        </form>
+    </div>
+    <!-- axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- Login js     -->
+    <script src="../JS/Login.js"></script>
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+</body>
+</html>
