@@ -137,7 +137,7 @@ label{
 /* Extra small devices (phones) */
 @media (max-width: 600px) {
   .vertical-center {
-    max-width: 65%;
+    max-width: 85%;
     display: flex;
     flex: 1 1 300px;
   }
