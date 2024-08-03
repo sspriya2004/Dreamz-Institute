@@ -27,6 +27,11 @@ body{
 }
 .vertical-center{
   margin: 35px 0px;
+  width: 35%;
+    max-width: 35%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
 }
 .form-group{
   margin-top: -10px;
@@ -97,4 +102,79 @@ label{
   text-align: center;
   font-size: 14px;
   line-height: 2.2;
+}
+/* @media (min-width: 350px) {
+  .vertical-center{
+    font-size: 20px;
+    background-color: blue;
+        max-width: 55%;
+        display: flex;
+        flex: 1 1 300px;
+  }
+}
+@media (min-width: 600px) {
+  .vertical-center {
+    font-size: 18px;
+        background-color: black;
+        max-width: 63%;
+        display: flex;
+        flex: 1 1 300px;
+  }
+}
+@media (min-width: 768px) {
+  .vertical-center {
+    font-size: 20px;
+    background-color: green;
+        max-width: 35%;
+        display: flex;
+        flex: 1 1 300px;
+  }
+
+}
+
+ */
+
+/* Extra small devices (phones) */
+@media (max-width: 600px) {
+  .vertical-center {
+    max-width: 65%;
+    display: flex;
+    flex: 1 1 300px;
+  }
+}
+
+/* Small devices (tablets in portrait mode) */
+@media (min-width: 600px) and (max-width: 768px) {
+  .vertical-center {
+        max-width: 60%;
+        display: flex;
+        flex: 1 1 300px;
+  }
+}
+
+/* Medium devices (tablets in landscape mode) */
+@media (min-width: 768px) and (max-width: 992px) {
+  .vertical-center {
+        max-width: 45%;
+        display: flex;
+        flex: 1 1 300px;
+  }
+}
+
+/* Large devices (desktops) */
+@media (min-width: 992px) and (max-width: 1200px) {
+  .vertical-center {
+        max-width: 35%;
+        display: flex;
+        flex: 1 1 300px;
+  }
+}
+
+/* Extra large devices (large desktops) */
+@media (min-width: 1200px) {
+  .vertical-center {
+        max-width: 35%;
+        display: flex;
+        flex: 1 1 300px;
+  }
 }
