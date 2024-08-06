@@ -31,10 +31,17 @@ showLogin.addEventListener("click", e => {
     document.getElementById('signup-form').style.display = "none";
 })
 
+// Page Loader
+document.onreadystatechange = function(){
+
+}
+
 // Login Request
 const login = document.getElementById('login');
 login.addEventListener("click", async(e) => {
     e.preventDefault();
+
+
     let username = document.getElementById('username').value;
     let password = document.getElementById('password').value;
     if(username=="" | password==""){
@@ -43,22 +50,28 @@ login.addEventListener("click", async(e) => {
     else{
         document.getElementById('login-err-msg').innerHTML = "";
         try{
-            console.log({username,password});
             var response = await axios.post('http://ameen2210.pythonanywhere.com/login/',{username, password});
             var is_active = response.data.user_object.is_active;
             var is_superuser = response.data.user_object.is_superuser;
             var is_staff = response.data.user_object.is_staff;
+            console.log({username,password});
             console.log(response);
         }
         catch(error){
             console.log(error);
         }
+
         if(response.data.result=="success"){
             if(is_active && is_superuser){
-                window.location.href = "HTML/Home.html";
+                document.getElementById('loading').style.display = "flex";
+                setTimeout(() => {
+                    window.location.href = "HTML/Home.html";
+                }, 4000);
             }
             else if(is_active && is_staff){
-                window.location.href = "HTML/AddTuitionFees.html";
+                setTimeout(() => {
+                    window.location.href = "HTML/AddTuitionFees.html";
+                }, 4000);
             }
         }
         else{
