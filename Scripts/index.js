@@ -69,9 +69,11 @@ login.addEventListener("click", async(e) => {
             // setTimeout(() => {
 
                 if(is_active && is_superuser){
+                    document.getElementById('fa-spinner').style.display = "none"; // disables spinner in login btn
                     window.location.href = "HTML/Home.html";
                 }
                 else if(is_active && is_staff){
+                    document.getElementById('fa-spinner').style.display = "none"; // disables spinner in login btn
                     window.location.href = "HTML/AddTuitionFees.html";
                 }
             // }, 4000);
