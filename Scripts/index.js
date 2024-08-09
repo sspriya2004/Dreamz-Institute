@@ -53,7 +53,7 @@ login.addEventListener("click", async(e) => {
         document.getElementById('fa-spinner').style.display = "inline-block"; //enables spinner in login btn
 
         try{
-            var response = await axios.post('http://ameen2210.pythonanywhere.com/login/',{username, password});
+            var response = await axios.post('https://ameen2210.pythonanywhere.com/login/',{username, password});
             var is_active = response.data.user_object.is_active;
             var is_superuser = response.data.user_object.is_superuser;
             var is_staff = response.data.user_object.is_staff;
