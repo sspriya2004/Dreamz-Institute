@@ -31,24 +31,27 @@ showLogin.addEventListener("click", e => {
     document.getElementById('signup-form').style.display = "none";
 })
 
-// Page Loader
-document.onreadystatechange = function(){
-
-}
 
 // Login Request
+document.addEventListener('DOMContentLoaded', () =>{
+    
 const login = document.getElementById('login');
+
 login.addEventListener("click", async(e) => {
     e.preventDefault();
-
-
     let username = document.getElementById('username').value;
     let password = document.getElementById('password').value;
+    
     if(username=="" | password==""){
         document.getElementById('login-err-msg').innerHTML = "Please fill out the fields";
     }
     else{
+        if(username){
+            localStorage.setItem('currentUser', username);
+        }
         document.getElementById('login-err-msg').innerHTML = "";
+        document.getElementById('fa-spinner').style.display = "inline-block"; //enables spinner in login btn
+
         try{
             var response = await axios.post('http://ameen2210.pythonanywhere.com/login/',{username, password});
             var is_active = response.data.user_object.is_active;
@@ -62,25 +65,26 @@ login.addEventListener("click", async(e) => {
         }
 
         if(response.data.result=="success"){
-            if(is_active && is_superuser){
-                document.getElementById('loading').style.display = "flex";
-                setTimeout(() => {
+            // document.getElementById('loading').style.display = "flex";
+            // setTimeout(() => {
+
+                if(is_active && is_superuser){
                     window.location.href = "HTML/Home.html";
-                }, 4000);
-            }
-            else if(is_active && is_staff){
-                setTimeout(() => {
+                }
+                else if(is_active && is_staff){
                     window.location.href = "HTML/AddTuitionFees.html";
-                }, 4000);
-            }
+                }
+            // }, 4000);
         }
+ 
         else{
+            document.getElementById('fa-spinner').style.display = "none"; // disables spinner in login btn
             document.getElementById('login-err-msg').innerHTML = `Incorrect username or password <br> Try Again`;
         }
     }
     
 })
-
+})
 // Signup request
 const signup = document.getElementById('signup');
 signup.addEventListener("click", async(e) => {

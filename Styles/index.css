@@ -103,7 +103,7 @@ label{
   font-size: 14px;
   line-height: 2.2;
 }
-.loading{
+/* .loading{
   position: fixed;
   top: 0;
   left: 0;
@@ -114,13 +114,17 @@ label{
   justify-content: center;
   align-items: center;
   display: none;
-}
-.spinner{
-  border: 15px solid white;
-  border-top: 15px solid #256eff;
+} */
+/* .spinner{
+  border: 12px solid white;
+  border-top: 12px solid #256eff;
   border-radius: 50%;
-  width: 120px;
-  height: 120px;
+  width: 80px;
+  height: 80px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+} */
+.fa-spin{  
   -webkit-animation: spin 2s linear infinite;
   animation: spin 2s linear infinite;
 }
